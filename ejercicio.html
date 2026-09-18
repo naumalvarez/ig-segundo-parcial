@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laurie Anderson - Repositorio de Grabaciones</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Tipografía Abel de Google Fonts - solo para títulos y destacados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Contenedor principal - centrado con flexbox -->
     <div class="contenedor">
 
+        <!-- Encabezado - igual en todas las páginas -->
         <header>
+            <h1>Laurie Anderson</h1>
+            <p class="subtitulo">Performance, tecnología y narración en el arte contemporáneo</p>
         </header>
 
+        <!-- Menú de navegación - igual en todas las páginas -->
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -21,13 +30,70 @@
             </ul>
         </nav>
 
+        <!-- Contenido principal -->
         <main>
+
+            <section>
+                <h2>Repositorio de grabaciones digitales</h2>
+                <p>Este sistema permite gestionar el repositorio de grabaciones digitales de obras musicales de Laurie Anderson. Completá los pasos a continuación para obtener información sobre la colección.</p>
+
+                <!-- Paso 1: cantidad de obras -->
+                <div id="paso-cantidad">
+                    <h3>Paso 1: ingresá la cantidad de obras</h3>
+                    <label for="cantidad">Cantidad de obras en el repositorio:</label>
+                    <input type="number" id="cantidad" min="1" placeholder="Ej: 5">
+                    <button type="button" id="btn-cantidad" onclick="iniciarCarga()">Confirmar cantidad</button>
+                    <p id="error-cantidad" class="error"></p>
+                </div>
+
+                <!-- Paso 2: datos de cada obra (se habilita con JS) -->
+                <div id="paso-obra" class="deshabilitado">
+                    <h3>Paso 2: ingresá los datos de cada obra</h3>
+                    <p id="indicador-obra"></p>
+                    <label for="nombre-obra">Nombre de la obra:</label>
+                    <input type="text" id="nombre-obra" placeholder="Ej: O Superman">
+                    <label for="duracion">Duración (en minutos):</label>
+                    <input type="number" id="duracion" min="0" step="0.1" placeholder="Ej: 8.5">
+                    <label for="peso">Peso del archivo (en MB):</label>
+                    <input type="number" id="peso" min="0" step="0.1" placeholder="Ej: 45">
+                    <button type="button" id="btn-obra" onclick="cargarObra()">Agregar obra</button>
+                    <p id="error-obra" class="error"></p>
+                </div>
+
+                <!-- Paso 3: datos globales (se habilita con JS) -->
+                <div id="paso-global" class="deshabilitado">
+                    <h3>Paso 3: ingresá los datos de transferencia y almacenamiento</h3>
+                    <label for="tiempo-transferencia">Tiempo estimado de transferencia (ms por MB):</label>
+                    <input type="number" id="tiempo-transferencia" min="0" step="0.1" placeholder="Ej: 10">
+                    <label for="costo-mb">Costo mensual de almacenamiento (por MB):</label>
+                    <input type="number" id="costo-mb" min="0" step="0.01" placeholder="Ej: 0.05">
+                    <button type="button" id="btn-calcular" onclick="calcularResultados()">Calcular resultados</button>
+                    <p id="error-global" class="error"></p>
+                </div>
+
+                <!-- Resultados (se muestran con JS) -->
+                <div id="resultados" class="deshabilitado">
+                    <h3>Resultados</h3>
+                    <div id="contenido-resultados"></div>
+                    <button type="button" id="btn-reiniciar" onclick="reiniciar()">Reiniciar</button>
+                </div>
+
+            </section>
+
         </main>
 
+        <!-- Pie de página - igual en todas las páginas -->
         <footer>
+            <address>
+                Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a>
+            </address>
+            <p>&copy; 2026 Laurie Anderson - Informática General UNA</p>
         </footer>
 
-    </div>
+    </div><!-- fin .contenedor -->
+
+    <!-- JS solo en esta página -->
+    <script src="js/ejercicio.js"></script>
 
 </body>
 </html>

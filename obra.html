@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laurie Anderson - Obra</title>
+    <title>Laurie Anderson - Obra y Concepto</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <!-- Tipografía Abel de Google Fonts - solo para títulos y destacados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Contenedor principal - centrado con flexbox -->
     <div class="contenedor">
 
+        <!-- Encabezado - igual en todas las páginas -->
         <header>
+            <h1>Laurie Anderson</h1>
+            <p class="subtitulo">Performance, tecnología y narración en el arte contemporáneo</p>
         </header>
 
+        <!-- Menú de navegación - igual en todas las páginas -->
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -21,13 +30,94 @@
             </ul>
         </nav>
 
+        <!-- Contenido principal -->
         <main>
+
+            <!-- Layout de 2 columnas de ancho diferente -->
+            <section class="dos-columnas">
+
+                <!-- Columna principal (más ancha) -->
+                <div class="columna-principal">
+
+                    <section>
+                        <h2>Tecnología, narrativa y experimentación</h2>
+                        <p>El trabajo de Laurie Anderson se caracteriza por la integración de tecnologías en sus procesos creativos, no como un fin en sí mismo, sino como una herramienta para expandir el lenguaje artístico. Sus obras suelen desarrollarse como narraciones fragmentadas, donde la voz guía al espectador a través de historias que mezclan lo personal, lo político y lo ficticio.</p>
+                    </section>
+
+                    <section>
+                        <h2>El lenguaje como materia artística</h2>
+                        <p>El lenguaje ocupa un lugar central en la obra de Laurie Anderson. Sus piezas exploran cómo las palabras construyen significado y cómo pueden ser transformadas mediante la repetición, la fragmentación y el uso de tecnología.</p>
+                        <p>A través de estas estrategias, el lenguaje deja de ser únicamente un medio de comunicación para convertirse en un material artístico. Sus obras revelan las tensiones entre lo que se dice, lo que se escucha y lo que se interpreta.</p>
+                    </section>
+
+                    <section>
+                        <h2>La performance como experiencia</h2>
+                        <img src="img/anderson-3.jpg" alt="Laurie Anderson en performance">
+                        <p>La performance es uno de los principales formatos en los que desarrolla su trabajo. En sus presentaciones, combina música, proyecciones visuales y narración en vivo para crear experiencias inmersivas.</p>
+                        <p>Estas performances no solo transmiten un contenido, sino que construyen un espacio de interacción con el público. La presencia del cuerpo, la voz y la tecnología genera una relación directa que redefine el rol del espectador.</p>
+                    </section>
+
+                    <section>
+                        <h2>Cruces entre arte y tecnología</h2>
+                        <p>Laurie Anderson ha sido una pionera en la incorporación de nuevas tecnologías en el arte. Desde instrumentos modificados hasta sistemas digitales, su trabajo investiga cómo la tecnología puede influir en la creación y la percepción artística.</p>
+                        <p>Su obra continúa siendo relevante en un contexto donde la tecnología ocupa un lugar central en la cultura.</p>
+                    </section>
+
+                    <!-- Galería generada con JavaScript -->
+                    <section id="seccion-galeria">
+                        <h2>Galería de obras</h2>
+                        <p>Seleccioná una opción para cambiar el tamaño de las imágenes:</p>
+                        <div class="controles-galeria">
+                            <button onclick="cambiarTamano('chico')">Imágenes chicas</button>
+                            <button onclick="cambiarTamano('grande')">Imágenes grandes</button>
+                        </div>
+                        <!-- La galería se genera con JS -->
+                        <div id="galeria"></div>
+                    </section>
+
+                </div><!-- fin .columna-principal -->
+
+                <!-- Columna lateral (más angosta) -->
+                <aside class="columna-lateral">
+
+                    <section>
+                        <h2>Obras y conceptos clave</h2>
+                        <ul>
+                            <li>O Superman</li>
+                            <li>United States Live</li>
+                            <li>Big Science</li>
+                            <li>Lenguaje y narrativa</li>
+                            <li>Performance multimedia</li>
+                            <li>Manipulación de la voz</li>
+                        </ul>
+                    </section>
+
+                    <!-- Dato curioso al azar -->
+                    <section id="seccion-dato">
+                        <h2>¿Sabías que...?</h2>
+                        <p id="dato-curioso">Hacé clic en el botón para descubrir un dato curioso sobre Laurie Anderson.</p>
+                        <button onclick="mostrarDato()">Nuevo dato curioso</button>
+                    </section>
+
+                </aside><!-- fin .columna-lateral -->
+
+            </section><!-- fin .dos-columnas -->
+
         </main>
 
+        <!-- Pie de página - igual en todas las páginas -->
         <footer>
+            <address>
+                Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a>
+            </address>
+            <p>&copy; 2026 Laurie Anderson - Informática General UNA</p>
         </footer>
 
-    </div>
+    </div><!-- fin .contenedor -->
+
+    <!-- JS solo en esta página -->
+    <script src="js/galeria.js"></script>
+    <script src="js/datos.js"></script>
 
 </body>
 </html>
